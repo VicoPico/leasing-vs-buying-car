@@ -26,6 +26,10 @@ This Python project helps you compare the financial costs of leasing versus buyi
    ```
 4. Adjust parameters in the script as needed for your scenario.
 
+> **Note:**  
+> Use `python3` and `pip3` if your system distinguishes between Python 2 and Python 3.  
+> On some systems, you may use `python` and `pip` if they point to Python 3.
+
 ## Output
 
 - Prints a table comparing costs for each year
