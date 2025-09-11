@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from rich.console import Console
+from rich.table import Table
 
 
 # --- Time value helpers ---
@@ -140,6 +142,24 @@ if __name__ == "__main__":
         lease_acquisition_fee=500,
         lease_disposition_fee=500,
     )
-    print(df_costs.to_string(index=False))
+
+    # Use rich to display the table
+    console = Console()
+    table = Table(title="Lease vs Buy Cost Comparison")
+
+    table.add_column("Years", justify="right")
+    table.add_column("PresentValue_Buy", justify="right")
+    table.add_column("PresentValue_Lease", justify="right")
+    table.add_column("LeaseMinusBuy", justify="right")
+
+    for _, row in df_costs.iterrows():
+        table.add_row(
+            str(row["Years"]),
+            f"{row['PresentValue_Buy']:,.2f}",
+            f"{row['PresentValue_Lease']:,.2f}",
+            f"{row['LeaseMinusBuy']:,.2f}",
+        )
+
+    console.print(table)
     print("Breakeven year:", find_breakeven_year(df_costs))
     plot_cost_comparison(df_costs)
