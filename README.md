@@ -11,15 +11,20 @@ This Python project helps you compare the financial costs of leasing versus buyi
 
 ## Usage
 
-1. Install dependencies:
-   ```sh
-   pip install numpy pandas matplotlib
+1. Create a virtual environment:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
    ```
-2. Run the script:
-   ```sh
+2. Install dependencies:
+   ```bash
+   pip install numpy pandas matplotlib rich
+   ```
+3. Run the script:
+   ```bash
    python leasing_vs_buying_car.py
    ```
-3. Adjust parameters in the script as needed for your scenario.
+4. Adjust parameters in the script as needed for your scenario.
 
 ## Output
 

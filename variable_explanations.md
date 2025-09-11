@@ -36,6 +36,13 @@ This document explains the meaning and purpose of each variable used in the code
 - **monthly_lease_cost**: The combined monthly cost of lease payment, maintenance, and insurance when leasing.
 - **total_months**: The total number of months in the analysis horizon.
 
+## Output Table Columns
+
+- `Years`: Analysis horizon in years.
+- `PresentValue_Buy`: Present value of buying costs.
+- `PresentValue_Lease`: Present value of leasing costs.
+- `LeaseMinusBuy`: Difference between lease and buy present values.
+
 ## Analysis and Plotting Variables
 
 - **results**: List of dictionaries storing results for each year in the time horizon.
